@@ -9,7 +9,7 @@ angular.module('app.routes', [])
     $stateProvider
 
     .state('menu.contactEdit', {
-        url: '/edit?id',
+        url: '/edit/:id',
         views: {
             'tab1': {
                 templateUrl: 'templates/contactEdit.html',

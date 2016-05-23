@@ -8,7 +8,7 @@
         </form>
         <ion-list>
             <ion-item ng-repeat="contact in contacts | filter:searchText" ui-sref="menu.contactDetails({id: {{contact.id}} })" href="#/details/{{contact.id}}">
-                <i class="icon ion-ionic"></i> &nbsp; {{contact.name}}
+                <i class="icon ion-android-contact"></i> &nbsp; {{contact.name}}
             </ion-item>
         </ion-list>
     </ion-content>

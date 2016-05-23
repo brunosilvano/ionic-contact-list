@@ -1,0 +1,21 @@
+<ion-view ng-controller="contactEditCtrl" title="Contact Edit" id="contactEditCtrlPage" class=" ">
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form id="contactEdit-form7" class="list">
+            <label class="item item-input " id="contactEdit-textarea1">
+                <span class="input-label">Name:</span>
+                <input type="text" placeholder="Name" ng-model="name" type="text">
+            </label>
+            <label class="item item-input " id="contactEdit-textarea2">
+                <span class="input-label">E-Mail:</span>
+                <input type="text" placeholder="Email" ng-model="email" type="text">
+            </label>
+            <label class="item item-input " id="contactEdit-textarea3">
+                <span class="input-label">Phone:</span>
+                <input type="tel" placeholder="Phone Number" ng-model="phone" type="text">
+            </label>
+        </form>
+        <div class="spacer" style="width: 300px; height: 150px;"></div>
+        <a ng-click="insert()" ui-sref="menu.contacts" id="contactEdit-button5" class=" button button-balanced  button-block icon-left ion-edit">Finish</a>
+        <a ui-sref="menu.contacts" id="contactEdit-button5" class=" button button-stable  button-block icon-left ion-arrow-return-left">Back</a>
+    </ion-content>
+</ion-view>
