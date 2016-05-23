@@ -23,6 +23,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     }
     // create and instantiate new Database
     db = window.sqlitePlugin.openDatabase({ name: 'my.db', location: 'default'});
-    db.executeSql("CREATE TABLE IF NOT EXISTS contatos (name TEXT, email TEXT, phone TEXT)");
+    db.executeSql("CREATE TABLE IF NOT EXISTS contatos (id INTEGER PRIMARY KEY, name TEXT, email TEXT, phone TEXT)");
+
   });
 })
