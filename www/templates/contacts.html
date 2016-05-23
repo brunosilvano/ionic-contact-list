@@ -7,7 +7,7 @@
             </label>
         </form>
         <ion-list show-delete="false" can-swipe="true">
-            <ion-item ng-repeat="contact in contacts | filter:searchText" ui-sref="menu.contactDetails({id: {{contact.id}} })" href="#/details/{{contact.id}}">
+            <ion-item ng-repeat="contact in contacts | filter:searchText | orderBy: 'name'" ui-sref="menu.contactDetails({id: {{contact.id}} })" href="#/details/{{contact.id}}">
                 <i class="icon ion-android-contact"></i> &nbsp; {{contact.name}}
                 <ion-option-button class="button-assertive icon ion-trash-a" ng-click="delete(contact)"></ion-option-button>
             </ion-item>

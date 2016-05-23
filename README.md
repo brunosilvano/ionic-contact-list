@@ -1,9 +1,14 @@
-# ionic-contact-list
+# listaIonic
 Contact list App using [Ionic](http://ionic.io/?utm_source=framework&utm_medium=navbar&utm_campaign=platform%20CTA) - created for [Gama Academy Bootcamp](https://www.facebook.com/gamaacademybr/videos/873276939466555/) (Hacker Stack).
 
-It was challenged to build a simple list app using a technology that the group doesn't know into a short time.
+Our challenge was to build a simple contact list app using a technology that none of us had experience.
+The deadline for this project (beginning to end) was 2 days.
 
-Here is our, i hope you enjoy
+This the mobile version of the app. For the Web version see: https://github.com/danfaiole/lista-ionic
+
+Here is our app. We hope you enjoy it!
+
+YouTube demo: https://youtu.be/cYnwpaR6y3w
 
 ## Installation 
 
@@ -13,9 +18,9 @@ Here is our, i hope you enjoy
 ```
 $ npm install -g cordova ionic
 ```
-3 - Install SQLite Plugin *(on the projects directory)*
+3 - Install SQLite Plugin (https://github.com/litehelpers/Cordova-sqlite-storage) *(on the projects directory)*
 ```
-cordova plugin add https://github.com/brodysoft/Cordova-SQLitePlugin.git
+cordova plugin add cordova-sqlite-storage
 ```
 4 - Install [Android SDK](https://developer.android.com/studio/index.html#downloads) (or [IOS](https://developer.apple.com/ios/download/))
 
@@ -29,7 +34,7 @@ ionic build android
 ionic run android
 ```
 ## Thanks 
-Developed by Bruno Silviano (@brunosilvano), Daniel Faiole (@danfaiole) and Igor Caldeira (@igorcaldeira) :+1:
+Developed by Bruno Silvano (@brunosilvano), Daniel Faiole (@danfaiole) and Igor Caldeira (@igorcaldeira) :+1:
 
-Special thanks to our designer, Karina Maia (karinammabreu@gmail.com)
+Special thanks to our designer: Karina Maia (karinammabreu@gmail.com)
 
