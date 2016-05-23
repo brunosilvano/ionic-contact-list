@@ -1,9 +1,9 @@
 angular.module('app.controllers', [])
-  
+
 .controller('contactDetailsCtrl', function($scope) {
 
 })
-   
+
 .controller('newContactCtrl', function($scope) {
 
     $scope.insert = function() {
@@ -18,8 +18,18 @@ angular.module('app.controllers', [])
   }
 
 })
-      
-.controller('contactsCtrl', function($scope) {
 
+.controller('contactsCtrl', function($scope) {
+  $scope.contacts = [];
+  
+  db.executeSql('select name from contatos', [], function(res){
+    if (res.rows.length > 0) {
+      for (var i = 0; i < res.rows.length; i++) {
+        $scope.contacts.push({
+          name: res.rows.item(i).name
+        })
+      }
+    }
+
+  })
 })
- 
