@@ -31,7 +31,7 @@ angular.module('app.controllers', [])
     //alert("Scope name: " + this.name);
     var query = "INSERT INTO contatos (name, email, phone) VALUES (?, ?, ?)";
 	db.executeSql(query, [this.name, this.email, this.phone], function (resultSet) {
-	  alert('Id: ' + resultSet.insertId);
+	  //alert('Id: ' + resultSet.insertId);
 	  //alert("Name: " + resultSet.rows.item(0).name);
 	}, function(error) {
 	  alert('SELECT error: ' + error.message);
@@ -45,11 +45,10 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('contactsCtrl', function($scope, $ionicPlatform) {
+.controller('contactsCtrl', function($scope, $ionicPlatform, $stateParams, $state) {
 
+  	$scope.$on('$ionicView.beforeEnter', function() {  	  	
   	$scope.contacts = [];
-  	//$scope.$on('$ionicView.beforeEnter', function() {  	  	
-
 	  	$ionicPlatform.ready(function() {  		
 		    db.executeSql("SELECT id, name FROM contatos", [], function(res){
 		    	if (res.rows.length > 0) {
@@ -61,12 +60,21 @@ angular.module('app.controllers', [])
 		        alert(err);
 		    });
 		});
-	//$ionicHistory.clearCache();
-	//});
+	});
+
+	$scope.delete = function(contact) {		
+		var query = "DELETE FROM contatos WHERE id=?";
+		db.executeSql(query, [contact.id], function(res){
+			$scope.contacts.splice($scope.contacts.indexOf(item), 1);
+		}, function(err) {
+			console.error(err);
+		});
+		$state.go($state.current, {}, {reload: true});
+	};
 
 })
 
-.controller('contactEditCtrl', function ($scope, $stateParams, BlankFactory) {
+.controller('contactEditCtrl', function ($scope, BlankFactory) {
 	//$scope.id = 0;
 	$scope.$on('$ionicView.beforeEnter', function() {	
 		$scope.name = blanckfactory.name;
@@ -79,7 +87,7 @@ angular.module('app.controllers', [])
     //alert(blanckfactory.id + "\n" + blanckfactory.name + "\n" + blanckfactory.email + "\n" + blanckfactory.phone);
      var query = "UPDATE contatos SET name=?, email=?, phone=? WHERE id=?";
 	 db.executeSql(query, [this.name, this.email, this.phone, blanckfactory.id], function (res) {
-	   alert('Success! ');
+	   //alert('Success! ');
 	   //alert("Name: " + resultSet.rows.item(0).name);
 	 }, function(error) {
 	   alert('SELECT error: ' + error.message);
