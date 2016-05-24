@@ -4,7 +4,7 @@ Contact list App using [Ionic](http://ionic.io/?utm_source=framework&utm_medium=
 Our challenge was to build a simple contact list app using a technology that none of us had experience.
 The deadline for this project (beginning to end) was 2 days.
 
-This the mobile version of the app. For the Web version see: https://github.com/danfaiole/lista-ionic
+This is the mobile version of the app. For the Web version see: https://github.com/danfaiole/lista-ionic
 
 Here is our app. We hope you enjoy it!
 
@@ -38,3 +38,6 @@ Developed by Bruno Silvano (@brunosilvano), Daniel Faiole (@danfaiole) and Igor 
 
 Special thanks to our designer: Karina Maia (karinammabreu@gmail.com)
 
+## Future implementations
+
+- [autoListDivider] (http://mcgivery.com/dividing-list-automatically-ionic-framework/) : [GitHub] (https://github.com/andrewmcgivery/ionic-ion-autoListDivider)
